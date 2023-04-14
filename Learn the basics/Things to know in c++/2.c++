@@ -7,7 +7,7 @@ int dataTypeSize(string str) {
         
         if(str[0]=='I'||str[0]=='F')
         
-            return 4;
+            return 4
         
         else
             return 8;
