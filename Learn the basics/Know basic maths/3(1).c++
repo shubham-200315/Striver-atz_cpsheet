@@ -2,7 +2,7 @@
 		{
 		    // Code here.
 		    int temp =0;
-		    int final = n;
+		    int final = n
 		    while(n>0)
 		    {
 		 
