@@ -4,7 +4,7 @@ void printSquare(int n) {
         {
             for(int j =0; j<n; j++)
             {
-                cout<<"* ";
+                cout<<"* "
             }
             cout<<endl;
         }
