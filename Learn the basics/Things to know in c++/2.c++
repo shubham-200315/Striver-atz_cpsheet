@@ -10,6 +10,6 @@ int dataTypeSize(string str) {
             return 4;
         
         else
-            return 8
+            return 8;
         
     }
