@@ -1,32 +1,61 @@
-    vector<int>kthSmallestNum(int n, vector<vector<int>>&range, int q, vector<int>queries){
-        //Write your code here
-        sort(range.begin(),range.end());
-        vector<int> ans;
-        for(int i=0;i<q;i++){
-            int temp = queries[i];
-            int last=-1,j=0,t;
-            for(j=0;j<n;j++){
-                if(last<range[j][1] and last>=range[j][0]){
-                    t = range[j][1]-last;
-                    if(t>=temp){
-                        ans.push_back(last+temp);
-                        break;
-                    }
-                    last=range[j][1];
-                    temp-=t;
-                }
-                else if(last<range[j][1]){
-                    t = range[j][1]-range[j][0]+1;
-                    if(t>=temp){
-                        ans.push_back(range[j][0]+temp-1);
-                        break;
-                    }
-                    last=range[j][1];
-                    temp-=t;
-                }
-            }
-            if(j==n)ans.push_back(-1);
-        }
-        return ans;
-    }
+	int search(int A[], int N){
+	    
+	    
+// 	   #Approach 1:-
+// 	  std::unordered_map<int, int> mp;
+// 	  for(int i=0; i<N; i++)
+// 	      mp[A[i]]++;
+// 	  for(auto i: mp)
+// 	  {
+// 	    if(i.second==1)
+// 	    return i.first; 
+// 	  }
+
+
+    //  #Approach 2:-
+    //  int wr =0;
+    //  while(wr<N)
+    //  {
+    //      if(A[wr]==A[wr+1])
+    //          wr = wr+2;
+    //      if(A[wr]!=A[wr+1])
+    //      {
+    //          int element = A[wr];
+    //          return element;
+    //      }
+    //  }
+    //  return 0;
+    //  }
     
+    
+    // #Approach 3:-
+    int s =0;
+    int e = N-1;
+     while(s<=e)
+     {
+         int m = (s+e)/2;
+         if(A[m]!= A[m-1] && A[m]!= A[m+1])
+         {
+             return A[m];
+         }
+         else if(A[m] == A[m-1]){
+             if((e-m)%2 == 1)
+             {
+                 s= m+1;
+             }
+             else{
+                 e = m -2;
+             }
+             
+         }
+         else{
+              if((e-m)%2 == 1)
+             {
+                 e = m -1;
+             }
+             else{
+                 s= m+2;
+             }
+         }
+     }
+	}
