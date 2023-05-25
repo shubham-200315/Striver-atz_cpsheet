@@ -2,7 +2,7 @@
         
            Node* head = new Node(arr[0]);
           Node* temp = head;
-          int i =1;
+          int i =1; 
        while(i<arr.size())
        {
           if(temp->next == NULL){
